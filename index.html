@@ -6,37 +6,77 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
-
-h1 {
-  color: darkblue;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  padding: 8px;
-  background-color: white;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-.cartao {
-  max-width: 300px;
-  margin: 30px auto;
+  background-color: #eaeaea;
+  margin: 0;
   padding: 20px;
+}
+.cartao {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   text-align: center;
 }
-
-.escuro {
-  background-color: #222;
+.sobre {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+}
+.sobre h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+.sobre p {
+  color: #555;
+  line-height: 1.5;
+}
+.habilidades {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+.habilidades ul {
+  list-style: none;
+  padding: 0;
+}
+.habilidades li {
+  background-color: #333;
   color: white;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.contato {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+.contato ul {
+  list-style: none;
+  padding: 0;
+}
+.contato li {
+  display: inline-block;
+  margin: 5px;
+}
+.contato a {
+  background-color: #4a90d9;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+footer {
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -45,33 +85,53 @@ li {
 <div class="cartao">
   <h1>Seu Nome</h1>
   <p id="frase">Uma frase curta sobre você.</p>
+
   <ul>
     <li><a href="https://www.google.com">Google</a></li>
     <li><a href="https://www.youtube.com">YouTube</a></li>
     <li><a href="https://www.wikipedia.org">Wikipédia</a></li>
   </ul>
+
   <button onclick="mudarFrase()">Clique aqui</button>
-  <button onclick="contarClique()">Contar cliques</button>
   <p id="contador">Cliques: 0</p>
-  <button onclick="trocarTema()">Trocar tema</button>
+
+  <div class="sobre">
+    <h2>Sobre mim</h2>
+    <p>Escreva aqui um textinho curto sobre você: quem é, o que gosta de fazer, ou o que está aprendendo agora.</p>
+  </div>
+
+  <div class="habilidades">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript (básico)</li>
+    </ul>
+  </div>
+
+  <div class="contato">
+    <h2>Contato</h2>
+    <p>Quer falar comigo? Me encontre aqui:</p>
+    <ul>
+      <li><a href="mailto:seuemail@exemplo.com">E-mail</a></li>
+      <li><a href="https://instagram.com/seuusuario">Instagram</a></li>
+    </ul>
+  </div>
 </div>
+
+<footer>
+  <p>&copy; 2026 Seu Nome. Todos os direitos reservados.</p>
+</footer>
 
 <script>
 let cliques = 0;
 
 function mudarFrase() {
-  document.getElementById("frase").innerText = "Você clicou no botão!";
-}
-
-function contarClique() {
-  cliques = cliques + 1;
-  document.getElementById("contador").innerText = "Cliques: " + cliques;
-}
-
-function trocarTema() {
-  document.querySelector(".cartao").classList.toggle("escuro");
+  cliques++;
+  document.getElementById("frase").textContent = "Obrigado por clicar!";
+  document.getElementById("contador").textContent = "Cliques: " + cliques;
 }
 </script>
 
 </body>
-  </html>
+</html>
