@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Meu Perfil</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: darkblue;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 8px;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.cartao {
+  max-width: 300px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.escuro {
+  background-color: #222;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="cartao">
+  <h1>Seu Nome</h1>
+  <p id="frase">Uma frase curta sobre você.</p>
+  <ul>
+    <li><a href="https://www.google.com">Google</a></li>
+    <li><a href="https://www.youtube.com">YouTube</a></li>
+    <li><a href="https://www.wikipedia.org">Wikipédia</a></li>
+  </ul>
+  <button onclick="mudarFrase()">Clique aqui</button>
+  <button onclick="contarClique()">Contar cliques</button>
+  <p id="contador">Cliques: 0</p>
+  <button onclick="trocarTema()">Trocar tema</button>
+</div>
+
+<script>
+let cliques = 0;
+
+function mudarFrase() {
+  document.getElementById("frase").innerText = "Você clicou no botão!";
+}
+
+function contarClique() {
+  cliques = cliques + 1;
+  document.getElementById("contador").innerText = "Cliques: " + cliques;
+}
+
+function trocarTema() {
+  document.querySelector(".cartao").classList.toggle("escuro");
+}
+</script>
+
+</body>
+  </html>
