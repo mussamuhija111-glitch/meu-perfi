@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meu Perfil</title>
 <style>
 body {
@@ -158,6 +158,26 @@ function mudarFrase() {
   cliques++;
   document.getElementById("frase").textContent = "Obrigado por clicar!";
   document.getElementById("contador").textContent = "Cliques: " + cliques;
+}@media (max-width: 480px) {
+  .cartao {
+    padding: 10px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .habilidades li,
+  .contato a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 14px;
+  }
 }
 </script>
 
